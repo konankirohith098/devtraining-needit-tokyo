@@ -36,7 +36,7 @@
         <sys_update_name>sys_script_client_0e18a3fd0f743200cd674f8ce1050e43</sys_update_name>
         <table>x_58872_needit_needit</table>
         <type>onChange</type>
-        <ui_type>10</ui_type>
+        <ui_type>0</ui_type>
         <view/>
     </sys_script_client>
 </record_update>
