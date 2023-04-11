@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_script_client">
+    <sys_script_client action="INSERT_OR_UPDATE">
+        <active>false</active>
+        <applies_extended>false</applies_extended>
+        <condition/>
+        <description/>
+        <field/>
+        <global>true</global>
+        <isolate_script>true</isolate_script>
+        <messages/>
+        <name>Populate Email Address</name>
+        <order/>
+        <script><![CDATA[function onLoad() {
+	//Type appropriate comment here, and begin script below
+
+	var ga = new GlideAjax('GetEmailAddress'); // HelloWorld is the script include class 
+	ga.addParam('sysparm_name','getEmail'); // helloWorld is the script include method 
+	ga.addParam('sysparm_user_name',g_form.getValue('u_requested_for')); // Set parameter sysparm_user_name to 'Bob' 
+	ga.getXML(HelloWorldParse);  /* Call HelloWorld.helloWorld() with the parameter sysparm_user_name set to 'Bob' 
+	 and use the callback function HelloWorldParse() to return the result when ready */
+
+	// the callback function for returning the result from the server-side code
+	function HelloWorldParse(response) {  
+		var answer = response.responseXML.documentElement.getAttribute("answer"); 
+		//alert(answer);
+		g_form.setValue('u_requested_for_email',answer);
+	}
+
+
+}]]></script>
+        <sys_class_name>sys_script_client</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2023-04-04 06:01:15</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>44ec3fe047422110ca363e58c26d43c5</sys_id>
+        <sys_mod_count>6</sys_mod_count>
+        <sys_name>Populate Email Address</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="NeedIt" source="x_58872_needit">6ead8e780f603200cd674f8ce1050ed1</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="NeedIt">6ead8e780f603200cd674f8ce1050ed1</sys_scope>
+        <sys_update_name>sys_script_client_44ec3fe047422110ca363e58c26d43c5</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2023-04-04 06:30:49</sys_updated_on>
+        <table>x_58872_needit_needit</table>
+        <type>onLoad</type>
+        <ui_type>10</ui_type>
+        <view/>
+    </sys_script_client>
+</record_update>
